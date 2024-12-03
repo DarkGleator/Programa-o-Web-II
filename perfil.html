@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Perfil do Utilizador</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <header>
+        <h1>Perfil</h1>
+    </header>
+    <main>
+        <a href="#" onclick="history.go(-1)" class="back-button"> Voltar</a>
+        <button id="deleteUserButton">Eliminar Conta</button>
+        <section id="userDetails">
+            <h2>Dados do Utilizador</h2>
+            <div id="userDetailsContent">
+            </div>
+            <button id="editUserDetailsButton">Editar Dados</button>
+    <div id="editUserDetailsForm" style="display: none;">
+        <input type="text" id="editFullName" placeholder="Novo Nome" required>
+        <input type="email" id="editEmail" placeholder="Novo Email" required>
+        <button id="saveUserDetailsButton">Salvar</button>
+    </div>
+        </section>
+        <section id="userBets">
+            <h2>As Suas Apostas</h2>
+            <div id="userBetsContent">
+            </div>
+            <button id="deleteUserBetsButton">Apagar Apostas Selecionadas</button>
+        </section>
+    </main>
+    
+    <script src="perfil.js"></script>
+</body>
+</html>

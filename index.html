@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Website de Loto Online</title>
+</head>
+
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " id="main-navbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" class="navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#section1">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2">Roleta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3">Números Mágicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section4">Ganhar Créditos</a>
+                </li>
+                <li class="nav-item" id="loginButton">
+                    <button class="btn btn-primary" onclick="showLoginRegister()">Login</button>
+                </li>
+                <li class="nav-item" id="profileNavItem" style="display: none;">
+                    <a class="nav-link" href="perfil.html" id="profileLink">Perfil</a>
+                </li>
+                <li class="nav-item" id="creditsNavItem" style="display: none;"><span id="userCreditsNavbar">0</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="fullpage">
+        <div class="section" id="section1">
+            <div>
+                <h1>Bem-vindo ao White Lotto</h1>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div>
+                <h1>Joga na Nossa Roleta de Créditos!</h1>
+                <p>Escolha a cor, coloque o valor e Aposte já!</p>
+                <div id="bettingOptions">
+                    <label for="colorSelect">Escolha a cor:</label>
+                    <select id="colorSelect">
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarelo">Amarelo</option>
+                    </select>
+                    <input type="number" id="betAmount" placeholder="Quantidade de créditos">
+                    <button id="betButton" onclick="bet()">Apostar</button>
+                </div>
+                <!-- Countdown -->
+                <div id="wheelContainer">
+                    <div id="wheel"></div>
+                    <div id="pointer"></div>        
+                </div>
+                <div id="multiplierSection">
+                    <h3>Vermelho <b>x2</b> Azul <b>x10</b> Verde <b>x3</b> Amarelo <b>x6</b></h3>
+                    <ul id="multiplierList"></ul>
+                </div>
+                <div class="results-menu" id="resultsMenu">
+                    <h3>Últimos Resultados da Roleta:</h3>
+                    <ul id="lastResults"></ul>    
+            </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+       <h1>Números Mágicos</h1>
+       <p>Escolha um número de 0 a 10, se esse número aparecer duas vezes, ganha o dobro da aposta!</p>
+        <div class="number-boxes">
+            <div class="number-box" id="numberSquare1"></div>
+            <div class="number-box" id="numberSquare2"></div>
+            <div class="number-box" id="numberSquare3"></div>
+            <div class="number-box" id="numberSquare4"></div>
+            <div class="number-box" id="numberSquare5"></div>
+            <div class="number-box" id="numberSquare6"></div>
+        </div>
+        <div class="input-group">
+            <input type="number" id="numberInput" placeholder="Escolha um número de 0 a 10">
+            <input type="number" id="betAmountInput" placeholder="Valor da aposta">
+            <button id="betButton" onclick="placeBet()">Apostar</button>
+        </div>
+        <p id="betResult"></p>
+    </div>
+        </div>
+            </div>
+        </div>
+        <div class="section" id="section4">
+            <div>
+                <h1>Está sem créditos?</h1>
+                <button id="addCreditsButton" onclick="addCredits()" class="creditButton">Ganhe 50 Créditos Grátis!</button>
+                <p>Válido apenas 3 vezes!</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal de Login/Registro -->
+    <div class="login-register" id="loginRegisterModal">
+        <span class="close-button" onclick="closeLoginRegister()">X</span>
+        <h1 id="formTitle">Login</h1>
+        <div id="loginForm">
+            <input type="email" placeholder="E-mail" id="email">
+            <input type="password" placeholder="Senha" id="password">
+            <button onclick="login()">Login</button>
+            <p>Não tem uma conta? <a href="#" onclick="switchForm()">Registe-se</a></p>
+        </div>
+        <div id="registerForm" style="display: none;">
+            <input type="text" placeholder="Nome Completo" id="fullName">
+            <input type="email" placeholder="E-mail" id="regEmail">
+            <input type="password" placeholder="Senha" id="regPassword">
+            <input type="password" placeholder="Confirmação de Senha" id="confirmPassword">
+            <button onclick="register()">Registar</button>
+            <p>Já tem uma conta? <a href="#" onclick="switchForm()">Faça Login</a></p>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
